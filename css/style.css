@@ -1,0 +1,168 @@
+@import url(http://fonts.googleapis.com/css?family=Caesar+Dressing|Raleway:200);
+
+h1,
+h4,
+legend,
+input,
+a {
+  font-family: 'Caesar Dressing', cursive;
+}
+
+p, textarea{
+  font-family: 'Raleway', sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+body {
+  background-color: #ecf0f1;
+  overflow: hidden;
+}
+
+/* Index.html */
+.Messager{
+  width:200px;
+  height:50px;
+  background-color: rgba(125, 221, 125, 0.5);
+  border-left: solid 5px #399a39; 
+  position:absolute;
+  top:-50px;
+  left:10%;
+}
+
+.Messager p{
+  font-size:30px;
+  margin:5px 0 0 10%;
+}
+/* ----  */ 
+
+#BgLeft {
+  background-color: #c0392b;
+  padding-top: 5%;
+}
+#BgRight {
+  background-color: #ecf0f1;
+  padding-top: 5%;
+}
+#NavBar {
+  background-color: #374140;
+  height: 15px;
+}
+#NavBar div a {
+  color: #ecf0f1;
+}
+#NavBar div a h4 {
+  font-size:12px;
+  position: absolute;
+  bottom: -24px;
+  right: 25px;
+}
+#UserIcone {
+  position: absolute;
+  bottom: 1px;
+  right: 5px;
+}
+#menu {
+  background-color: #2a2c2b;
+}
+
+#zone_chat{
+  width:127%;
+  margin: 0 0 0 -5px;
+  overflow:auto;
+}
+
+#formulaire_chat{
+  width:130%;
+  margin-left: -10px;
+  display:none;
+}
+  #formulaire_chat textarea {
+    margin-top:5px;
+    background-color: #2a2c2b;
+    border-color: #ecf0f1;
+  }
+  #formulaire_chat textarea:focus {
+    background-color: #ecf0f1;
+    box-shadow: none;
+  }
+
+  #BtnGroupChat {
+    position: relative;
+    margin-top:-40px;
+    margin-left: 72%;
+  }
+  #BtnGroupChat button {
+    background-color: #2a2c2b;
+    border-color: #ecf0f1;
+    color: #ecf0f1;
+    font-size:16px;
+  }
+  #BtnGroupChat button:hover {
+    background-color: #ecf0f1;
+    border-color: #2a2c2b;
+  }
+  #BtnGroupChat button:hover span {
+    color: #2a2c2b;
+  }
+
+.message{
+  background-color: rgba(237, 237, 237, 1);
+  padding:1px 0 1px 7px;
+  margin-top: 0px;
+  line-height: 16px;
+  font-family: 'Raleway', sans-serif;
+  word-wrap: break-word
+}
+
+  .Msg_space{
+     margin:1px 0;
+     height:2px;
+  }
+
+.newUser{
+  margin:1px 0;
+  background-color: #CDFC14;
+  height:2px;
+}
+
+.userCo{
+  margin:2px;
+}
+
+#dropdown{
+  margin-top: 15px;
+  background-color:#374140;
+}
+  .dropdownlist{
+    margin-left:0px;
+    color:#ecf0f1;
+    font-family: 'Raleway', sans-serif;
+    margin-left:15px;
+  }
+  .dropdownlist span{
+    padding-right:10px;
+  }
+  .dropdownlist a{
+    font-size:14px;
+    padding:0;
+  }
+
+  #canva{
+    
+  }
+
+
+#Engrenage {
+  font-size:230px;
+  margin-left:10%;
+  -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
+}
+
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

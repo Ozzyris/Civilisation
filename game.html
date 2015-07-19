@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Alexandre Nicol">
+    <link rel="shortcut icon" href="img/Everything/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="img/Everything/Apple-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/Everything/Apple-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/Everything/Apple-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/Everything/Apple-144.png">
+
+    <title>The Conqueror</title>
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <nav id="NavBar" class="col-md-12" role="navigation">
+      <div class="dropdown col-md-offset-11 col-md-1">
+        <a href="#" data-toggle="dropdown" id="Nom_Utilisateur" style="color:#FF000; font-size:11px;" alt="Utilisateur"><h4>{{name}}</h4><span id="UserIcone" class="glyphicon glyphicon-user"></span></a>
+        <ul class="dropdown-menu col-md-1" id="dropdown" role="menu" aria-labelledby="dLabel">
+          <li class="dropdownlist" style="color:#a3a3a3;"><span class="glyphicon glyphicon-inbox"></span>Inbox</li>
+          <li class="dropdownlist" style="color:#a3a3a3;"><span class="glyphicon glyphicon-cog"></span>My Profile</li>
+          <li><a href="index.html" class="dropdownlist"><span class="glyphicon glyphicon-off"></span>Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div id="menu" class="col-md-2 col-sm-3 col-xs-12 ">
+
+      <section id="Zone_Usr" class="WIHeight" style="background-color:#1D1E1A; width:20px; margin-left:-15px; float:left;">
+      </section>
+
+      <div class="col-md-11" style="float:left;">
+        <section id="zone_chat" class="WIHeightZoneChat">
+          <div id="msg_chat" class="message col-md-12">
+            {{#Colori}}
+            <span style="color:#{{Colori}}; padding-right:4px;" class="glyphicon glyphicon-user userCo"></span>
+            {{/Colori}}
+            {{message}}
+            {{#Min}}
+            <span class="badge pull-right" style="background-color:#c0392b;">{{h}}:{{Min}}</span>
+            {{/Min}}
+          </div>
+
+        </section>
+
+        <form action="/" method="post" id="formulaire_chat" class="col-md-12 col-xs-12">
+          <textarea class="col-xs-11 form-control" id="TextareaChat"></textarea>
+          <div class="btn-group" id="BtnGroupChat">
+            <button class="btn btn-xs" disabled="disabled"><span class="glyphicon glyphicon-picture"></span></button>
+            <button class="btn btn-xs" disabled="disabled"><span class="glyphicon glyphicon-question-sign"></span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--<canvas id="canvas">-->
+      <div style="position:absolute; top:30%; left: 50%;">
+        <span id="Engrenage" class="glyphicon glyphicon-cog"></span>
+        <h4 style="font-size:25px;">Buy a real browser bro !</h4>
+      </div>
+    <!--</canvas>-->
+    <input id="debug"  class="form-control" type="text" />
+    <!-- Script -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mustache.js"></script>
+    <script src="js/script.js"></script>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+    <script src="js/game.js"></script>
+
+
+  </body>
+</html>

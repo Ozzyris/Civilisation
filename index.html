@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Alexandre Nicol">
+    <link rel="shortcut icon" href="img/Everything/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="img/Everything/Apple-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/Everything/Apple-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/Everything/Apple-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/Everything/Apple-144.png">
+
+    <title>The Conqueror</title>
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/colpick.css">
+
+  </head>
+  <body>
+  <div class="Messager"></div>
+
+    <form class="col-md-2 col-md-offset-5">
+      <br />
+      <h1 style="margin-left: 15%">Connexion</h1><br /><br />
+      <input type="text" class="form-control" id="Pseudo" maxlength="20" placeholder="Pseudo"><br />
+      <div id="picker" style="margin-left:5%;"></div><br />
+      <buton id="envoi_Connexion" class="col-md-6 col-md-offset-3 btn btn-default desable" >Envoyer</button>
+    </form>
+
+    <!-- Script -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/colpick.js"></script>
+    <script src="js/script.js"></script>
+
+    <script type="text/javascript">
+    $('#Pseudo').focus();
+      var Couleur;
+      var Pseudo;
+
+      $('#picker').colpick({
+        flat:true,
+        layout:'hex',
+        submit:0,
+        onChange:function(hsb,hex,rgb,fromSetColor) {
+          Couleur = hex;
+        }
+      });
+
+      $('#envoi_Connexion').click(function(){
+
+        Pseudo = $('#Pseudo').val();
+
+        if(Pseudo.length == 0 || Couleur == undefined){
+          if(Pseudo.length == 0 && Couleur == undefined){
+            $('.Messager').css( "background-color", "rgba(210, 0, 0, 0.5)" );
+            $('.Messager').css( "border-color", "rgba(210, 0, 0, 1)" );
+            $('.Messager').css( "height", "40" );
+            $('.Messager').html('<h4 class="MessagerP">Pseudo && Color Empty !</h4>');
+            $('.MessagerP').css( "font-size", "17px" );
+            $('.MessagerP').css( "margin-left", "5%" );
+            $('.Messager').animate({top: "+=50"}, 1000).delay( 2000 ).animate({top: "-=50"}, 1000);
+            $('#Pseudo').focus();
+          }else if(Pseudo.length == 0){
+            $('.Messager').css( "background-color", "rgba(245, 144, 25, 0.5)" );
+            $('.Messager').css( "border-color", "rgba(245, 144, 25, 1)" );
+            $('.Messager').css( "height", "50" );
+            $('.Messager').html('<h4 class="MessagerP">Pseudo Empty !</h4>');
+            $('.MessagerP').css( "font-size", "25px" );
+            $('.Messager').animate({top: "+=50"}, 1000).delay( 2000 ).animate({top: "-=50"}, 1000);
+            $('#Pseudo').focus();
+          }else{
+            $('.Messager').css( "background-color", "rgba(245, 144, 25, 0.5)" );
+            $('.Messager').css( "border-color", "rgba(245, 144, 25, 1)" );
+            $('.Messager').css( "height", "45" );
+            $('.Messager').html('<h4 class="MessagerP">Color not Chose !</h4>');
+            $('.MessagerP').css( "font-size", "20px" );
+            $('.Messager').animate({top: "+=50"}, 1000).delay( 2000 ).animate({top: "-=50"}, 1000);
+          }
+        }else{
+          document.location.href = 'game.html?pseudo=' + Pseudo + '&color=' + Couleur ;
+        }          
+      });
+    </script>
+
+
+  </body>
+</html>
